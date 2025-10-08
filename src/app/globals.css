@@ -48,6 +48,7 @@
    --sidebar-border: oklch(0.92 0.004 286.32);
    --sidebar-ring: oklch(0.623 0.214 259.815);
    --text-title: rgb(11 57 71 / var(--tw-text-opacity, 1));
+   --text-sub-title: rgb(66 102 113 / var(--tw-text-opacity, 1));
  }
  
 

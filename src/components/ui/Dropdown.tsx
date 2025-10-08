@@ -7,8 +7,7 @@ type DropdownProps = {
   data: { value: string; label: string }[]
   className?: string
   onChange?: (value: string) => void
-  defaultValue?: string
-  selectedItemCallback?: (item: any) => any
+  defaultValue?: string | object | null
   renderItem?: (item: any) => React.ReactNode
   renderSelected?: (item: any) => React.ReactNode
 }
@@ -19,7 +18,6 @@ export function Dropdown({
   className,
   onChange,
   defaultValue = '',
-  selectedItemCallback,
   renderItem,
   renderSelected
 }: DropdownProps) {
@@ -27,11 +25,9 @@ export function Dropdown({
   const [selected, setSelected] = React.useState<any>()
   const dropdownRef = React.useRef<HTMLDivElement>(null)
 
-  const selectedItem = data.find((d) => d.value === selected) || null
-  console.log(selectedItem, 'selectedItem')
+  const selectedItem = data.find((d) => d === selected) || null
 
   const handleSelect = (value: any) => {
-    console.log(value)
     setSelected(value)
     setOpen(false)
     onChange?.(value)
@@ -39,8 +35,6 @@ export function Dropdown({
 
   React.useEffect(() => {
     if (defaultValue) {
-      console.log('defaultValue', defaultValue)
-
       setSelected(defaultValue)
     }
   }, [defaultValue])

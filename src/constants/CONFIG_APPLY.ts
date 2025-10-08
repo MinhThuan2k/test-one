@@ -1,25 +1,28 @@
 export const CONFIG_APPLY_UNITED_STATES = [
   {
-    name: 'Singapore eVisa - 63 days, Multiple entry',
+    name: 'United States  eVisa - 63 days, Multiple entry',
     value: '77',
     show_if: {
       field_name: 'common_nationality_country',
       condition: 'in_list',
-      value: ['AM', 'AZ', 'BY', 'GE', 'KZ', 'KG', 'MD', 'RU', 'TM']
+      value: [
+        'vietnam',
+        'united-states',
+        'united-kingdom',
+        'germany',
+        'france',
+        'china'
+      ]
     },
     product_id: '10162',
     eligible_nationalities: [
-      'AM',
-      'AZ',
-      'BY',
-      'GE',
-      'KZ',
-      'KG',
-      'MD',
-      'RU',
-      'TM'
+      // 'vietnam',
+      'united-kingdom',
+      'germany',
+      'france',
+      'china'
     ],
-    product_name: 'Singapore eVisa',
+    product_name: 'United States eVisa',
     validity: {
       visa_validity_days: 63,
       visa_validity: '63 days after issued',
@@ -33,9 +36,9 @@ export const CONFIG_APPLY_UNITED_STATES = [
       important_information_1: null,
       important_information_2: null,
       requirement_text: {
-        product: 'Singapore eVisa',
+        product: 'United States eVisa',
         nationality: 'Vietnam',
-        destination: 'Singapore'
+        destination: 'United States'
       },
       duration_string_translated: '63 days'
     },
@@ -48,16 +51,16 @@ export const CONFIG_APPLY_UNITED_STATES = [
     }
   },
   {
-    name: 'Singapore SG Arrival Card + Health Declaration - 30 days, Single entry',
+    name: 'United States SG Arrival Card + Health Declaration - 30 days, Single entry',
     value: '5045',
     show_if: {
       field_name: 'common_nationality_country',
       condition: 'in_list',
-      value: ['AX', 'AL']
+      value: ['germany', 'france', 'china']
     },
     product_id: '10378',
-    eligible_nationalities: ['AX', 'ZW'],
-    product_name: 'Singapore SG Arrival Card + Health Declaration',
+    eligible_nationalities: ['germany', 'france', 'china'],
+    product_name: 'United States SG Arrival Card + Health Declaration',
     validity: {
       visa_validity_days: 30,
       visa_validity: '30 days after issued or until passport expires',
@@ -69,12 +72,12 @@ export const CONFIG_APPLY_UNITED_STATES = [
         exp_type: 'arrival'
       },
       important_information_1:
-        'This is an arrival card ONLY. Some nationalities still require a valid visa to enter Singapore.',
+        'This is an arrival card ONLY. Some nationalities still require a valid visa to enter United States.',
       important_information_2: null,
       requirement_text: {
-        product: 'Singapore SG Arrival Card + Health Declaration',
+        product: 'United States SG Arrival Card + Health Declaration',
         nationality: 'Vietnam',
-        destination: 'Singapore'
+        destination: 'United States'
       },
       duration_string_translated: '30 days'
     },

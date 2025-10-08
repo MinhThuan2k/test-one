@@ -6,22 +6,28 @@ import { COUNTRIES, NATIONALITIES } from '@/constants/STEPS'
 import { useEffect, useState } from 'react'
 import slugify from 'slugify'
 import Image from 'next/image'
+import { useVisaStore } from '@/store/visaStore'
 
 export function FormSearch() {
+  const { setNationality, setDestination } = useVisaStore()
+
   const [to, setTo] = useState<(typeof COUNTRIES)[number] | null>(null)
   const [national, setNational] = useState<
     (typeof NATIONALITIES)[number] | null
   >(null)
   const onChangeNational = (value: any) => {
     setNational(value)
+    setNationality(value)
   }
   const onChangeCountryTo = (value: any) => {
     setTo(value)
+    setDestination(value)
   }
 
   useEffect(() => {
     setTo(COUNTRIES?.[0])
     setNational(NATIONALITIES?.[0])
+    setNationality(NATIONALITIES?.[0])
   }, [])
   return (
     <div className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-10 w-full items-end">
@@ -31,7 +37,7 @@ export function FormSearch() {
           <Dropdown
             data={NATIONALITIES}
             onChange={onChangeNational}
-            defaultValue={national?.value}
+            defaultValue={national}
             renderSelected={(item) =>
               item ? (
                 <div className="flex items-center gap-2 ">
@@ -70,7 +76,7 @@ export function FormSearch() {
           <Dropdown
             data={COUNTRIES}
             onChange={onChangeCountryTo}
-            defaultValue={to?.value}
+            defaultValue={to}
             renderSelected={(item) =>
               item ? (
                 <div className="flex items-center gap-2 text-(--text-title)">
