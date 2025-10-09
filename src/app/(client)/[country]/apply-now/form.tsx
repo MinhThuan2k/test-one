@@ -40,6 +40,12 @@ export function FormApplyNow({ country }: { country: string }) {
 
   useEffect(() => {
     if (nationality) {
+      console.log(
+        data_config_by_country?.filter((item) =>
+          item?.eligible_nationalities.includes(nationality?.value)
+        )
+      )
+
       setListConfig(
         data_config_by_country?.filter((item) =>
           item?.eligible_nationalities.includes(nationality?.value)

@@ -16,7 +16,7 @@ export const CONFIG_APPLY_UNITED_STATES = [
     },
     product_id: '10162',
     eligible_nationalities: [
-      // 'vietnam',
+      'vietnam',
       'united-kingdom',
       'germany',
       'france',

@@ -4,8 +4,9 @@ import { cn } from '@/lib/utils'
 
 type DropdownProps = {
   title?: string
-  data: { value: string; label: string }[]
+  data: Record<any, any>[] | []
   className?: string
+  classNameBtn?: string
   onChange?: (value: string) => void
   defaultValue?: string | object | null
   renderItem?: (item: any) => React.ReactNode
@@ -16,6 +17,7 @@ export function Dropdown({
   title,
   data,
   className,
+  classNameBtn,
   onChange,
   defaultValue = '',
   renderItem,
@@ -56,15 +58,16 @@ export function Dropdown({
   return (
     <div
       ref={dropdownRef}
-      className={cn('relative w-full text-(--text-title)', className)}
+      className={cn('relative w-full min-h-12 text-(--text-title)', className)}
     >
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
         className={cn(
-          'w-full min-h-12 px-3 py-4 border border-gray-200 rounded-xl shadow flex justify-between items-center text-left bg-white',
+          'w-full h-full px-3 py-4 border border-gray-200 rounded-xl shadow flex justify-between items-center text-left bg-white',
           'hover:border-[#25CBD6] transition-all duration-200',
-          open && 'rounded-bl-none rounded-br-none'
+          open && 'rounded-bl-none rounded-br-none',
+          classNameBtn
         )}
       >
         <span className="text-(--text-title)">

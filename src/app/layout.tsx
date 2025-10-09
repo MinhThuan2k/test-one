@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="mdl-js">
-      <body className={`text-(--text-title) antialiased`}>
+      <body className={`text-(--text-title) antialiased ${manrope.variable}`}>
         <AppProviders>{children}</AppProviders>
       </body>
     </html>
